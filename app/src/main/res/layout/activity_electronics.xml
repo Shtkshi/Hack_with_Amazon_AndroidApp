@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".categories.clothing.women.Dress1">
+
+    <LinearLayout
+        android:id="@+id/parentLayout_electronics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/frame_electronics"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:background="#EB3E04"
+            android:src="@drawable/tv" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:text="Sony Bravia"
+                android:textColor="#F98204"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:padding="4dp"
+                android:textColor="#561239"
+                android:text="108 cm (43 Inches) Full HD Certified Android Smart LED TV KDL-43W800G (Black) (2019 Model)r"
+                android:textAlignment="textEnd"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:textColor="#01416F"
+            android:text="Rs. 1,00,000"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textColor="#EB3E04"
+            android:padding="4dp"
+            android:text="Color"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="4dp"
+                android:padding="4dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="4dp"
+                    android:textColor="#EB3E04"
+                    android:background="@drawable/size_bg"
+                    android:padding="4dp"
+                    android:text="black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="4dp"
+                    android:textColor="#EB3E04"
+                    android:background="@drawable/size_bg"
+                    android:padding="4dp"
+                    android:text="grey" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="4dp"
+                    android:textColor="#EB3E04"
+                    android:background="@drawable/size_bg"
+                    android:padding="4dp"
+                    android:text="white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="4dp"
+                    android:textColor="#EB3E04"
+                    android:background="@drawable/size_bg"
+                    android:padding="4dp"
+                    android:text="green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="4dp"
+                    android:textColor="#EB3E04"
+                    android:background="@drawable/size_bg"
+                    android:padding="4dp"
+                    android:text="blue" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:textColor="#01416F"
+            android:text="Product Discription"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:textColor="#EB3E04"
+            android:text="->Resolution: Full HD (1920x1080) | Refresh Rate: 50 hertz \n
+-> Connectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 3 USB ports to connect hard drives and other USB devices\n
+-> Sound : 10 watts Output | Clear Audio+ and Bass reflex speaker\n
+-> Smart TV features: Built-in Wi-Fi | Android TV: World of endless entertainment | voice search | Google Play and Built-in Chromecast\n
+-> Display: Full HD LED | X-Reality Pro | HDR | X-Protection Pro | slice of living design: Looks good, anywhere/n
+-> 1 year comprehensive warranty by Sony from date of purchase\n
+-> Installation: For requesting installation/wall mounting/demo of this product once delivered, please directly call Sony support on 1800 103 7799 and provide product's model name as well as seller's details mentioned on the invoice\n
+-> Easy returns: This product is eligible for replacement/refund within 10 days of delivery in case of any product defects, damage or features not matching the description provided"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:textColor="#01416F"
+            android:text="Offers"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textColor="#EB3E04"
+            android:padding="4dp"
+            android:text="Save up to 28% with GST input credit\n
+Sign in/Create a free business account"
+            android:textSize="12sp" />
+
+
+        <Button
+            android:id="@+id/tryIt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#FDF701"
+            android:textColor="#EB3E04"
+            android:text="Buy It" />
+    </LinearLayout>
+</ScrollView>

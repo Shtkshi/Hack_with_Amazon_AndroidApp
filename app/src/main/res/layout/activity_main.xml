@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F98204"
+    tools:context=".MainActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/scree"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/e"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/e" />
+
+            <ImageButton
+                android:id="@+id/h"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/h" />
+
+            <ImageButton
+                android:id="@+id/g"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/g" />
+
+            <ImageButton
+                android:id="@+id/c"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/c" />
+
+            <ImageButton
+                android:id="@+id/b"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/b" />
+
+            <ImageButton
+
+                android:id="@+id/dup_g"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/g" />
+
+            <ImageButton
+                android:id="@+id/f"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/f" />
+
+            <ImageButton
+                android:id="@+id/dup_b"
+                android:layout_width="99dp"
+                android:layout_height="99dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/b" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scree"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/colorBlindSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_gravity="center"
+                android:text="Color Blind Mode"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/elderSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:text="Elder Mode"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:text="TRENDING"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:background="#000000"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/explore1" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="200dp"
+                            android:padding="10dp">
+
+                            <VideoView
+                                android:id="@+id/video2"
+                                android:layout_width="357dp"
+                                android:layout_height="400dp" />
+
+                            <VideoView
+                                android:id="@+id/video"
+                                android:layout_width="500dp"
+                                android:layout_height="200dp" />
+
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:text="CATEGORY"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/Clothing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/clothing"
+                    android:text="Female" />
+
+                <ImageButton
+                    android:id="@+id/Groceries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/groceries"
+                    android:text="Female" />
+                <ImageButton
+                    android:id="@+id/electronics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/electronics"
+                    android:text="Female" />
+
+                <ImageButton
+                        android:id="@+id/DailyNeeds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/daily"
+                    android:text="Female" />
+
+                <ImageButton
+                    android:id="@+id/Decorations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/decor"
+                    android:text="Female" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="New Arrival"
+                    android:background="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    />
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:background="#000000"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/checknow" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="200dp"
+                            android:padding="10dp">
+
+                            <ImageButton
+                                android:layout_width="130dp"
+                                android:id="@+id/item1"
+                                android:layout_height="200dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/item5" />
+
+
+                            <ImageButton
+                                android:layout_width="130dp"
+                                android:layout_height="200dp"
+                                android:id="@+id/item4"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/item4" />
+
+                            <ImageButton
+                                android:id="@+id/item5"
+                                android:layout_width="130dp"
+                                android:layout_height="200dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/item1" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>
