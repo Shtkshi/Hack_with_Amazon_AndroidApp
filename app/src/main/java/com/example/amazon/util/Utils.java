@@ -100,6 +100,11 @@ public class Utils {
         }
     };
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public static void speak(TextToSpeech tts, String message) {
+        tts.speak(message, TextToSpeech.QUEUE_FLUSH, null, "InitText");
+        Log.i("TTS", "Initialization success.");
+    }
     public enum Disease {
         None(0),
         DName(1),

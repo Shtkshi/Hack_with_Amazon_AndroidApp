@@ -148,11 +148,8 @@
             android:layout_margin="4dp"
             android:padding="4dp"
             android:textColor="#EB3E04"
-            android:text="Rich in dietary fibre
-Natural chakki process retains the goodness and natural taste
-Soft and fluffy rotis
-Atta that will fascinate your five senses
-Country of Origin: India"
+            android:id="@+id/groceries_disc"
+            android:text="Fortune Chakki Fresh Atta. Light and fluffy rotis are guaranteed, with the asli phulke wala atta! Made with the finest wheat crops, Fortune Chakki Fresh Atta ensures with every meal your loved ones say, ek phulka aur. Made from the choicest grains. Perfect combination of heath and taste Makes soft and fluffy Roti, Paranthas, etc. Can also be used to make a variety of other sweets and savouries.Unit 10 kg Shelf Life 3 months Country of Origin IndiaDescription Handpicked from India's finest wheat fields, Fortune Chakki Fresh Atta is made with 100% atta and 0% maida which complements your Ghar ka Khana perfectly. This superior quality product has a soft touch and mesmerizing aroma. Helps balance blood sugar and cholesterol levels. Rich in Vitamin B1 which is essential for glucose metabolism. Contains powerful antioxidant which helps our body fight against external toxins.Disclaimer Every effort is made to maintain the accuracy of all information. However, actual product packaging and materials may contain more and/or different information. It is recommended not to solely rely on the information presented."
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -182,7 +179,7 @@ Get GST invoice and save up to 28% on business purchases. Sign up for free Here'
             android:layout_margin="4dp"
             android:padding="4dp"
             android:textColor="#01416F"
-            android:text="Key Notes"
+            android:text="Product Discription"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -191,8 +188,15 @@ Get GST invoice and save up to 28% on business purchases. Sign up for free Here'
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:textColor="#EB3E04"
+            android:id="@+id/groceries_details"
             android:padding="4dp"
-            android:text="Handpicked from the finest wheat fields across India, every golden amber grain of wheat used for Fortune chakki fresh atta goes through a traditional chakki process that retains all the goodness and natural taste while also giving you the nutritional benefits of dietary fibre. This natural process makes sure that your rotis stay soft and fluffy for long"
+            android:text="Net Content Volume1000 Millilitres\n
+BrandFORTUNE\n
+Plant or Animal Product TypeSunflower\n
+Item Volume1 Litres\n
+Package Weight0.91 Kilograms.SCCA\n
+A light, healthy and nutritious oil that is easy to digest\n
+Low in saturated fats and rich in natural vitamins\n"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatTextView

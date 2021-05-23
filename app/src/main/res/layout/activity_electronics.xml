@@ -148,16 +148,45 @@
             android:layout_marginLeft="30dp"
             android:layout_margin="4dp"
             android:padding="4dp"
+            android:id="@+id/electronics_text"
             android:textColor="#EB3E04"
-            android:text="->Resolution: Full HD (1920x1080) | Refresh Rate: 50 hertz \n
--> Connectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 3 USB ports to connect hard drives and other USB devices\n
--> Sound : 10 watts Output | Clear Audio+ and Bass reflex speaker\n
--> Smart TV features: Built-in Wi-Fi | Android TV: World of endless entertainment | voice search | Google Play and Built-in Chromecast\n
--> Display: Full HD LED | X-Reality Pro | HDR | X-Protection Pro | slice of living design: Looks good, anywhere/n
--> 1 year comprehensive warranty by Sony from date of purchase\n
--> Installation: For requesting installation/wall mounting/demo of this product once delivered, please directly call Sony support on 1800 103 7799 and provide product's model name as well as seller's details mentioned on the invoice\n
--> Easy returns: This product is eligible for replacement/refund within 10 days of delivery in case of any product defects, damage or features not matching the description provided"
+            android:text="Crystal 4K Resolution\n
+Crystal 4K Display with a billion true colors ensures optimized colour expression so you can see every detail,4K UHD TV goes beyond regular FHD with 4x more pixels.Crystal Processor 4k
+Powerful 4K upscaling ensures you get up to 4K resolution for the content you love. You'll also experience more lifelike color expressions due to its sophisticated color mapping technology"
             android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Details"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:textColor="#01416F"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textColor="#EB3E04"
+            android:id="@+id/electronics_details"
+            android:padding="4dp"
+            android:text="Mounting TypeWall Mount and Table Mount\n
+BrandSamsung\n
+Resolution4K
+Connector TypeUSB, Built-in Wi-fi, Ethernet, HDMI\n
+Display TechnologyLED\n
+Supported Internet ServicesNetflix, Amazon Prime, Zee5, Youtube, Hotstar\n
+ColourBlack\n
+Screen Size55 Inches\n
+Refresh Rate60 Hz\n
+Item Weight14200 Grams\n"
+            android:textSize="12sp" />
+
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -168,6 +197,7 @@
             android:text="Offers"
             android:textSize="18sp"
             android:textStyle="bold" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -22,6 +23,7 @@ import java.util.Objects;
 public class Male_dress1 extends AppCompatActivity {
     int disease;
     Boolean colorblind;
+    Boolean elders=false;
     int[] imgID = {R.drawable.male1, R.drawable.male_d, R.drawable.male_p,R.drawable.male_t};
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -36,18 +38,29 @@ public class Male_dress1 extends AppCompatActivity {
         disease = extras.getInt("disease");
         Utils.change((LinearLayout) findViewById(R.id.parentLayout), disease, this);
 
-        findViewById(R.id._men).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Male_dress1.this, MainActivity.class);
-                intent.putExtra("productId", imgID[disease]);
-                intent.putExtra("disease",disease);
-                startActivity(intent);
-            }
-        });
+        elders=extras.getBoolean("elder");
+        //Elder
+        if(elders){
+            TextView textView1=findViewById(R.id.male_details);
+            textView1.setText("Product Dimensions: 15.24 x 20.32 x 2.54 cm; 162 Grams\n" +
+                    "Date First Available: 9 September 2020\n" +
+                    "Manufacturer: DORJE\n" +
+                    "ASIN: B08HL7TZSY\n" +
+                    "Item part number: DJ_IKM_M_B_L\n" +
+                    "Country of Origin: India\n" +
+                    "Department: Unisex\n" +
+                    "Manufacturer: DORJE\n" +
+                    "Item Weight: 162 g\n" +
+                    "Item Dimensions LxWxH: 15.2 x 20.3 x 2.5 Centimeters");
+
+            TextView textView2=findViewById(R.id.male_disc);
+            textView2.setText("Wear The Rare, Say Hi to Dorje Trippy t shirts, Truly unique T shirts Hand drawn artwork. Simply the best psychedelic t-shirt Made with Love, High in the Himalayas by the Himalayan Wonder Lama Dorje. \n" +
+                    "100% organic himalayan cotton t shirt perfectly breathable, soft & comfortable.");
+        }
 
 
-        disease=extras.getInt("disease");
+
+
         colorblind=extras.getBoolean("colorblind");
         if(colorblind)
             ((ImageView) findViewById(R.id.male_dress1)).setImageResource(imgID[disease]);

@@ -147,9 +147,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
+            android:id="@+id/male_disc"
             android:textColor="#EB3E04"
             android:padding="4dp"
-            android:text="Men pinted round neck t shirt with gathered detail, have mushroom prints on the front"
+            android:text="Wear The Rare, Say Hi to Dorje Trippy t shirts, Truly unique T shirts Hand drawn artwork. Simply the best psychedelic t-shirt Made with Love, High in the Himalayas by the Himalayan Wonder Lama Dorje.
+100% organic himalayan cotton t shirt perfectly breathable, soft and comfortable.
+These trance printed Psy T Shirts are manually printed to ensure superior quality, The Print does not Fade peel or crack.
+These Rave style trippy t-shirts are going to be your wardrobe staple. Pair em with lowers denims or shorts and they have the perfect on-the-go look for a chilling session or a Music Festival /Party up in the mountains.
+These Stylish T shirt Sets are by far more superior in quality than anything in its category. They have stood the test of time, washes and print quality. We assure you some eyeballs for your good taste, Guaranteed
+Go ahead order your Dorje Trippy tee NOW"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -157,7 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
-            android:text="Material and Core"
+            android:text="Details"
             android:textSize="18sp"
             android:textColor="#01416F"
             android:textStyle="bold" />
@@ -167,28 +173,25 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
+            android:id="@+id/male_details"
             android:textColor="#EB3E04"
-            android:text="Material 97% Cotton, 3% elastane \n Machine wash"
+            android:text="The Artwork Original Psychedelic Hand drawn Trippy art on these Stylish T-shirts are Unique stories of observed characters, their psy thoughts and experiences fused with fantasy Silent Believe and Sacred Geometry\n
+The Fabric Premium Combed High quality Organic Himalayan cotton finely blended with the right yarn Perfectly breathable and comfortable to wear in summers\n
+The Print Soft and breathable fine print, Doesn't feel like a patch. Screen printed by hand with a Superior quality fine mesh to preserve the details of the microfine sketches and artwork that doesn't crack or peel and stays beautiful timelessly\n
+Unique T shirt One of a kind Intense Hand drawn artwork 100% Money Back Guarantee If you don't Love it\n
+Product Dimensions: 15.24 x 20.32 x 2.54 cm; 162 Grams\n
+Date First Available: 9 September 2020\n
+Manufacturer: DORJE\n
+ASIN: B08HL7TZSY\n
+Item part number: DJ_IKM_M_B_L\n
+Country of Origin: India\n
+Department: Unisex\n
+Manufacturer: DORJE\n
+Item Weight: 162 g\n
+Item Dimensions LxWxH: 15.2 x 20.3 x 2.5 Centimeters\n"
             android:textSize="12sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:padding="4dp"
-            android:textColor="#01416F"
-            android:text="Style Note"
-            android:textSize="18sp"
-            android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:textColor="#EB3E04"
-            android:padding="4dp"
-            android:text="The dress from Abrakadabra is both stylish and durable, making it a must have item."
-            android:textSize="12sp" />
 
         <Button
             android:id="@+id/_men"

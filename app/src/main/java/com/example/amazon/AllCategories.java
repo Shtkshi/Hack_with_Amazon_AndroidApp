@@ -22,6 +22,7 @@ public class AllCategories extends AppCompatActivity {
     ArrayList<ArrayList<Integer>>icons = new ArrayList<ArrayList<Integer>>();
     ArrayList<Class>classes=new ArrayList<>();
     int disease;
+    Boolean elders=false;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +36,14 @@ public class AllCategories extends AppCompatActivity {
         disease = extras.getInt("disease");
         Utils.change((LinearLayout) findViewById(R.id.categories), disease, this);
 
+        elders=extras.getBoolean("elder");
+
+
         AddingItems();
 
         RecyclerView recyclerView=findViewById(R.id.AllCategoriesRecyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(AllCategories.this,LinearLayoutManager.VERTICAL,false));
-        AllCategoriesAdapter Adapter=new AllCategoriesAdapter(AllCategories.this,NameOfProblem,icons,classes,disease);
+        AllCategoriesAdapter Adapter=new AllCategoriesAdapter(AllCategories.this,NameOfProblem,icons,classes,disease,elders);
         recyclerView.setAdapter(Adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

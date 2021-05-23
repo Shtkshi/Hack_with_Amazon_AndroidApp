@@ -1,13 +1,16 @@
 package com.example.amazon;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,11 +30,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.text.HtmlCompat;
 
+import com.example.amazon.categories.clothing.women.Dress1;
 import com.example.amazon.categories.dailyEssentials.dailyEssentials;
 import com.example.amazon.categories.decor.decor;
 import com.example.amazon.categories.electronics.electronics;
 import com.example.amazon.categories.groceries.groceries;
 import com.example.amazon.util.Utils;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
     Boolean ElderMode=false;
     private SwitchCompat ElderModeSwitch;
     Menu myMenu;
+
+    int RecordAudioRequestCode = 1000;
+    SpeechRecognizer speechRecognizer;
+
 
 
     int[] clothing = {R.drawable.clothing, R.drawable.clothing_d, R.drawable.clothing_p, R.drawable.clothing_t};
@@ -82,6 +93,52 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         special();
     }
+
+
+    void elder(){
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    Utils.speak(tts, "Where do you want us to take you?");
+                } else {
+                    Toast.makeText(getApplicationContext(), "TTS Initialization failed!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, "com.google.android.tts");
+        tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+            @Override
+            public void onStart(String utteranceId) {
+
+            }
+
+            @Override
+            public void onDone(String utteranceId) {
+                tts.stop();
+                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                        RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                        "Speak Up");
+                try {
+                    startActivityForResult(intent, RecordAudioRequestCode);
+                } catch (ActivityNotFoundException a) {
+                    Toast.makeText(getApplicationContext(),
+                            "Sorry, your device doesn't support speech input.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onError(String utteranceId) {
+            }
+        });
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void special(){
@@ -203,6 +260,41 @@ public class MainActivity extends AppCompatActivity {
 //                ElderModeSwitch.setChecked(false);
             }
         }
+
+        if (requestCode == RecordAudioRequestCode && resultCode == RESULT_OK && data != null) {
+            ArrayList<String> result = data
+                    .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+//            Log.d("RESULT", result.get(0));
+            if (result.get(0).toLowerCase().contains("kapde") || result.get(0).toLowerCase().contains("clothes") || result.get(0).toLowerCase().contains("clothing") || result.get(0).toLowerCase().contains("girl")) {
+                Intent intent = new Intent(MainActivity.this, AllCategories.class);
+                intent.putExtra("elder", true);
+                intent.putExtra("disease", disease);
+
+                startActivity(intent);
+            } else if (result.get(0).toLowerCase().contains("groceries") || result.get(0).toLowerCase().contains("rashan") || result.get(0).toLowerCase().contains("boy") || result.get(0).toLowerCase().contains("ladke")) {
+                Intent intent = new Intent(MainActivity.this, groceries.class);
+                intent.putExtra("elder", true);
+                intent.putExtra("disease", disease);
+                startActivity(intent);
+            } else if (result.get(0).toLowerCase().contains("electronics") || result.get(0).toLowerCase().contains("tv") || result.get(0).toLowerCase().contains("gadgets") || result.get(0).toLowerCase().contains("technology")) {
+                Intent intent = new Intent(MainActivity.this, electronics.class);
+                intent.putExtra("elder", true);
+                intent.putExtra("disease", disease);
+
+                startActivity(intent);
+            } else if (result.get(0).toLowerCase().contains("decor") || result.get(0).toLowerCase().contains("sajawat ka saman") || result.get(0).toLowerCase().contains("sajane") || result.get(0).toLowerCase().contains("decorations")) {
+                Intent intent = new Intent(MainActivity.this, decor.class);
+                intent.putExtra("elder", true);
+                intent.putExtra("disease", disease);
+                startActivity(intent);
+            } else if (result.get(0).toLowerCase().contains("daily needs") || result.get(0).toLowerCase().contains("roj ka saman") || result.get(0).toLowerCase().contains("rashan") || result.get(0).toLowerCase().contains("kitchen ka saman") || result.get(0).toLowerCase().contains("daily need")) {
+                Intent intent = new Intent(MainActivity.this, groceries.class);
+                intent.putExtra("elder", true);
+                intent.putExtra("disease", disease);
+                startActivity(intent);
+            }
+        }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -232,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.menu_1:
-                
+                voice();
                 return true;
             case R.id.menu_2:
                 return true;
@@ -248,6 +340,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    void voice(){
+        elder();
+    }
     void button_click(){
 
         findViewById(R.id.Clothing).setOnClickListener(new View.OnClickListener() {
@@ -257,7 +352,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this, AllCategories.class);
 
                 i.putExtra("disease", disease);
+                i.putExtra("elder", ElderMode);
                 i.putExtra("colorblind", t);
+
                 startActivity(i);
 
 
@@ -271,6 +368,9 @@ public class MainActivity extends AppCompatActivity {
 
                 i.putExtra("disease", disease);
                 i.putExtra("colorblind", t);
+
+                i.putExtra("elder", ElderMode);
+
                 startActivity(i);
 
 
@@ -285,6 +385,8 @@ public class MainActivity extends AppCompatActivity {
 
                 i.putExtra("disease", disease);
                 i.putExtra("colorblind", t);
+                i.putExtra("elder", ElderMode);
+
                 startActivity(i);
 
 
@@ -299,6 +401,8 @@ public class MainActivity extends AppCompatActivity {
 
                 i.putExtra("disease", disease);
                 i.putExtra("colorblind", t);
+                i.putExtra("elder", ElderMode);
+
                 startActivity(i);
 
 
@@ -314,6 +418,8 @@ public class MainActivity extends AppCompatActivity {
 
                 i.putExtra("disease", disease);
                 i.putExtra("colorblind", t);
+                i.putExtra("elder", ElderMode);
+
                 startActivity(i);
 
 

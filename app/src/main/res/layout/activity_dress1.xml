@@ -146,8 +146,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
+            android:id="@+id/female_disc"
             android:textColor="#EB3E04"
-            android:text="Prime 2.0 Heathered Crew-Neck T-shirt with gathered detail, has a V-neck, four cactus images printed on t-shirt."
+            android:text="Make a cool upgrade to your casual staple with this basic t-shirt from Aeropostale. Made from breathable fabric, it's framed with a crew neck and short sleeves. Perfect to wear on a sunny day when paired with twill shorts and slip-on's.Ribbed crew neck , Short sleeves , Graphic print at front , Heathered , Country Of Origin - India , The model is 6ft1in tall and is wearing a size M,,
+Ribbed crew neck
+Short sleeves"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -156,7 +159,7 @@
             android:layout_margin="4dp"
             android:padding="4dp"
             android:textColor="#01416F"
-            android:text="Material and Core"
+            android:text="Details"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -164,9 +167,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
+            android:id="@+id/female_details"
             android:textColor="#EB3E04"
             android:padding="4dp"
-            android:text="Material 97% viscose, 3% elastane \n Machine wash"
+            android:text="Product Dimensions: 30.5 x 25.4 x 2.5 cm; 300 Grams.Item Weight: 300 g\n
+Item Dimensions LxWxH: 30.5 x 25.4 x 2.5 Centimeters\n
+Net Quantity: 1.00 count\n
+Generic Name: T-Shirt.\n
+Men Charcoal Crew Neck Brand Print Heathered T-Shirt_Make a cool upgrade to your casual staple with this basic t-shirt from Aeropostale.\n
+ Made from breathable fabric, it's framed with a crew neck and short sleeves. Perfect to wear on a sunny day when paired with twill shorts and slip-on's._ Ribbed crew neck , Short sleeves , Graphic print at front , Heathered , Country Of Origin - India \n
+ The model is 6ft1in tall and is wearing a size M"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatTextView

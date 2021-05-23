@@ -76,14 +76,38 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
+            android:id="@+id/DailyNeeds_disc"
             android:textColor="#EB3E04"
-            android:text="-> INDIA’S MOST POWERFUL LIQUID VAPOURISER powered by Gold Flash Technology\n
--> Contains: 1 unit of electric plug-in machine and 3 refills of anti-mosquito liquid vapouriser (45ml each)\n
--> Flash mode releases visible vapours for 30 minutes every 4 hours\n
--> Dual mode: Switch between Normal and Flash Mode, depending on the number of mosquitoes\n
--> Goodknight Gold Flash system is completely safe to be used around children and family\n
--> Gold Flash machine should be used Gold Flash refill only\n"
+            android:text="INDIA’S MOST POWERFUL LIQUID VAPOURISER powered by Gold Flash Technology\n
+Contains: 1 unit of electric plug-in machine and 3 refills of anti-mosquito liquid vapouriser (45ml each)\n
+Flash mode releases visible vapours for 30 minutes every 4 hours\n
+Dual mode: Switch between Normal and Flash Mode, depending on the number of mosquitoes\n
+Goodknight Gold Flash system is completely safe to be used around children and family\n
+Gold Flash machine should be used Gold Flash refill only\n"
             android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:textColor="#01416F"
+            android:text="Product Details"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textColor="#EB3E04"
+            android:id="@+id/DailyNeeds_details"
+            android:padding="4dp"
+            android:text="Item Weight: 108 g \n
+        Item Dimensions LxWxH: 20.9 x 5.7 x 8.8 Centimeters\n
+        Net Quantity: 1 U\n
+        Included Components: Good Knight Flash LMD Combi (Machine + 3 Refills).Automatically switches mode every 4 hours\n
+        Automatic mode movement switches from Normal mode to Flash Mode every 4 hours, to give you all round protection."
+            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"

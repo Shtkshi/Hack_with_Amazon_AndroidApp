@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -19,6 +20,7 @@ public class groceries extends AppCompatActivity {
     int disease;
     Boolean colorblind;
     int[] imgID = {R.drawable.aata, R.drawable.fortune_d, R.drawable.fortune_p, R.drawable.fortune_t};
+    Boolean elders=false;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -32,6 +34,23 @@ public class groceries extends AppCompatActivity {
         assert extras != null;
         disease = extras.getInt("disease");
         Utils.change((LinearLayout) findViewById(R.id.parentLayout_groceries), disease, this);
+
+
+        elders=extras.getBoolean("elder");
+        //Elder
+        if(elders){
+            TextView textView1=findViewById(R.id.groceries_details);
+            textView1.setText("Net Content Volume1000 Millilitres\n" +
+                    "BrandFORTUNE\n" +
+                    "Plant or Animal Product TypeSunflower\n" +
+                    "Item Volume1 Litres\n" +
+                    "Package Weight0.91 Kilograms");
+
+            TextView textView2=findViewById(R.id.groceries_disc);
+            textView2.setText("Light and fluffy rotis are guaranteed, with the asli phulke wala atta! Made with the finest wheat crops, Fortune Chakki Fresh Atta ensures with every meal your loved ones say, ek phulka aur. Can also be used to make a variety of other sweets and savouries.Unit 10 kg Shelf Life 3 months Country of Origin IndiaDescription Handpicked from India's finest wheat fields, Fortune Chakki Fresh Atta is made with 100% atta and 0% maida which complements your Ghar ka Khana perfectly. Fortune Chakki Fresh Atta");
+
+        }
+
 
         //images
         disease = extras.getInt("disease");

@@ -10,15 +10,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.amazon.R;
 import com.example.amazon.util.Utils;
+
+import org.w3c.dom.Text;
 
 import java.util.Objects;
 
 public class dailyEssentials extends AppCompatActivity {
     int disease;
     Boolean colorblind;
+    Boolean elders=false;
     int[] imgID = {R.drawable.all_out, R.drawable.gold_d, R.drawable.gold_p,R.drawable.gold_t};
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -35,6 +39,23 @@ public class dailyEssentials extends AppCompatActivity {
         assert extras != null;
         disease = extras.getInt("disease");
         Utils.change((LinearLayout) findViewById(R.id.parentLayout_dailyEssentials), disease, this);
+
+        elders=extras.getBoolean("elder");
+        //Elder
+        if(elders){
+            TextView textView1=findViewById(R.id.DailyNeeds_details);
+            textView1.setText("Item Weight: 108 g\n" +
+                    "Item Dimensions LxWxH: 20.9 x 5.7 x 8.8 Centimeters\n" +
+                    "Net Quantity: 1 U\n" +
+                    "Included Components: Good Knight Flash LMD Combi (Machine + 3 Refills)");
+
+            TextView textView2=findViewById(R.id.DailyNeeds_disc);
+            textView2.setText("INDIA’S MOST POWERFUL LIQUID VAPOURISER powered by Gold Flash Technology\n" +
+                    "Flash mode releases visible vapours for 30 minutes every 4 hours\n" +
+                    "Dual mode: Switch between Normal and Flash Mode, depending on the number of mosquitoes.");
+
+        }
+
 
         //images
         disease=extras.getInt("disease");

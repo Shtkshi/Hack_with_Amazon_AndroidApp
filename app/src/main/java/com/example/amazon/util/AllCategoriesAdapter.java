@@ -22,13 +22,15 @@ public class AllCategoriesAdapter extends RecyclerView.Adapter<AllCategoriesAdap
     ArrayList<ArrayList<Integer>>image;
     ArrayList<Class>classes;
     Context mCtx;
+    Boolean elders;
     int disease;
-    public AllCategoriesAdapter(Context mCtx, ArrayList<String> Name, ArrayList<ArrayList<Integer>> image, ArrayList<Class> classes,int disease) {
+    public AllCategoriesAdapter(Context mCtx, ArrayList<String> Name, ArrayList<ArrayList<Integer>> image, ArrayList<Class> classes,int disease, Boolean elders) {
         this.mCtx = mCtx;
         this.Name = Name;
         this.image = image;
         this.classes = classes;
         this.disease=disease;
+        this.elders=elders;
     }
 
 
@@ -48,6 +50,7 @@ public class AllCategoriesAdapter extends RecyclerView.Adapter<AllCategoriesAdap
             public void onClick(View v) {
                 Intent intent=new Intent(mCtx,classes.get(position));
                 intent.putExtra("disease", disease);
+                intent.putExtra("elder",elders);
                 mCtx.startActivity(intent);
             }
         });

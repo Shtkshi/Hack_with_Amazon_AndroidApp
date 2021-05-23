@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -22,6 +23,7 @@ import java.util.Objects;
 public class Dress1 extends AppCompatActivity {
     int disease = 0;
     boolean colorblind;
+    Boolean elder=false;
     int[] imgID = {R.drawable.femaletwo, R.drawable.tshirt_d, R.drawable.tshirt_p, R.drawable.tshirt_t};
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -36,6 +38,18 @@ public class Dress1 extends AppCompatActivity {
         disease = extras.getInt("disease");
 
         Utils.change((LinearLayout) findViewById(R.id.parentLayout), disease, this);
+
+        elder=extras.getBoolean("elder");
+        if(elder){
+            TextView textView1=findViewById(R.id.female_details);
+            TextView textView2=findViewById(R.id.female_disc);
+
+            textView1.setText("Product Dimensions: 30.5 x 25.4 x 2.5 cm; 300 Grams.Item Weight: 300 g\n" +
+                    "Item Dimensions LxWxH: 30.5 x 25.4 x 2.5 Centimeters\n" +
+                    "Net Quantity: 1.00 count\n" +
+                    "Generic Name: T-Shirt");
+            textView2.setText("Make a cool upgrade to your casual staple with this basic t-shirt from Aeropostale. Made from breathable fabric, it's framed with a crew neck and short sleeves. Perfect to wear on a sunny day when paired with twill shorts and slip-on's.");
+        }
 
         findViewById(R.id.tryIt).setOnClickListener(new View.OnClickListener() {
             @Override

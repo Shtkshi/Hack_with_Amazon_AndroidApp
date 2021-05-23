@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -20,6 +21,7 @@ public class electronics extends AppCompatActivity {
 
     int disease;
     Boolean colorblind;
+    Boolean elders=false;
     int[] imgID = {R.drawable.tv, R.drawable.bal_d, R.drawable.bal_p, R.drawable.bal_t};
 
 
@@ -36,6 +38,28 @@ public class electronics extends AppCompatActivity {
         assert extras != null;
         disease = extras.getInt("disease");
         Utils.change((LinearLayout) findViewById(R.id.parentLayout_electronics), disease, this);
+
+
+        elders=extras.getBoolean("elder");
+        //Elder
+        if(elders){
+
+            TextView textView1=(TextView)findViewById(R.id.electronics_details);
+            textView1.setText("Mounting TypeWall Mount\n" +
+                    "BrandSamsung\n" +
+                    "Resolution4K\n" +
+                    "Connector TypeUSB, Built-in Wi-fi\n" +
+                    "Display TechnologyLED\n" +
+                    "Supported Internet Services like Netflix\n" +
+                    "ColourBlack\n" +
+                    "Screen Size55 Inches\n" +
+                    " Weight14200 Grams");
+
+            TextView textView=(TextView)findViewById(R.id.electronics_text);
+            textView.setText("Crystal Processor 4k\n" +
+                    "Powerful 4K upscaling ensures you get up to 4K resolution for the content you love. \n You'll also experience more lifelike color expressions due to its sophisticated color mapping technology");
+        }
+
 
         //images
         disease = extras.getInt("disease");

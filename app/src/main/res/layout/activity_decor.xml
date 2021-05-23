@@ -24,8 +24,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
@@ -42,9 +42,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:padding="4dp"
-                android:textColor="#561239"
                 android:text="108 cm (43 Inches) Full HD Certified Android Smart LED TV KDL-43W800G (Black) (2019 Model)r"
                 android:textAlignment="textEnd"
+                android:textColor="#561239"
                 android:textSize="15dp" />
         </LinearLayout>
 
@@ -53,8 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
-            android:textColor="#01416F"
             android:text="Rs. 1,00,000"
+            android:textColor="#01416F"
             android:textSize="22dp"
             android:textStyle="bold" />
 
@@ -62,9 +62,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:textColor="#EB3E04"
             android:padding="4dp"
             android:text="Color"
+            android:textColor="#EB3E04"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -84,50 +84,50 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="4dp"
-                    android:textColor="#EB3E04"
                     android:background="@drawable/size_bg"
                     android:padding="4dp"
-                    android:text="black" />
+                    android:text="black"
+                    android:textColor="#EB3E04" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="4dp"
-                    android:textColor="#EB3E04"
                     android:background="@drawable/size_bg"
                     android:padding="4dp"
-                    android:text="grey" />
+                    android:text="grey"
+                    android:textColor="#EB3E04" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="4dp"
-                    android:textColor="#EB3E04"
                     android:background="@drawable/size_bg"
                     android:padding="4dp"
-                    android:text="white" />
+                    android:text="white"
+                    android:textColor="#EB3E04" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="4dp"
-                    android:textColor="#EB3E04"
                     android:background="@drawable/size_bg"
                     android:padding="4dp"
-                    android:text="green" />
+                    android:text="green"
+                    android:textColor="#EB3E04" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginVertical="4dp"
-                    android:textColor="#EB3E04"
                     android:background="@drawable/size_bg"
                     android:padding="4dp"
-                    android:text="blue" />
+                    android:text="blue"
+                    android:textColor="#EB3E04" />
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -136,26 +136,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
-            android:textColor="#01416F"
             android:text="Product Discription"
+            android:textColor="#01416F"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
             android:layout_margin="4dp"
+            android:layout_marginLeft="30dp"
             android:padding="4dp"
+            android:id="@+id/decor_disc"
             android:textColor="#EB3E04"
-            android:text="->Resolution: Full HD (1920x1080) | Refresh Rate: 50 hertz \n
--> Connectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 3 USB ports to connect hard drives and other USB devices\n
--> Sound : 10 watts Output | Clear Audio+ and Bass reflex speaker\n
--> Smart TV features: Built-in Wi-Fi | Android TV: World of endless entertainment | voice search | Google Play and Built-in Chromecast\n
--> Display: Full HD LED | X-Reality Pro | HDR | X-Protection Pro | slice of living design: Looks good, anywhere/n
--> 1 year comprehensive warranty by Sony from date of purchase\n
--> Installation: For requesting installation/wall mounting/demo of this product once delivered, please directly call Sony support on 1800 103 7799 and provide product's model name as well as seller's details mentioned on the invoice\n
--> Easy returns: This product is eligible for replacement/refund within 10 days of delivery in case of any product defects, damage or features not matching the description provided"
+            android:text="foldable storage box cum sitting stool for kids Perfect for kids Colorful design is perfect to decorate the kid's room brightly and positively. Encourage children to keep their room clean by storing things in attractive stool. Use as storage box Use this as a storage box for storing children’s clothes, shoes, toys, books and other accessories in the kid's room and study area. Use as stool Use this fruit printed storage box as a sitting stool, children sofa and footrest bench for kids. Appearance of soft plush sponge offers them comfortable sitting experience. Attractive design Unique design, lovely and sweet fruit style 3D printing, cylinder shape, solid and durable. Space saving Collapsible design, can be assembled in minutes and folds flat for space saving storage when not in use. Large storage space Large storage space offers a convenient storage area for socks, pillows, toys, magazines, books, clothing, etc. Easy assembling Just unfold the stool and keep the hard base at the stool's bottom for keeping the stool erect and stool is ready for children to seat and store their things. Decorate children's room very brightly and positively...!! Also get a solution for storaing kids stuff easily....!!"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -163,8 +157,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
+            android:text="Product Details"
             android:textColor="#01416F"
-            android:text="Offers"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -172,10 +166,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
+            android:layout_marginLeft="30dp"
+            android:padding="4dp"
+            android:id="@+id/decor_details"
             android:textColor="#EB3E04"
+            android:text="ColourMulticolour\n
+        BrandKRH store\n
+        Frame MaterialWood\n
+        Item ShapeOctagonal\n
+        Item Dimensions LxWxH10 x 10 x 10.Unique design, lovely and sweet fruit style printing, cylinder shape, solid and durable\n
+        Could be used as storage box for clothes, shoes, toys, accessories. Also used as sitting stool, foot stool, footrest bench for kids\n
+        Collapsible design, can be assembled in minutes and folds flat for space saving storage when not in use\n
+        Made of super soft velvet, plush sponge, paperboard and lined with hard paperboard strong load\n
+        It is easy to move without any great effort.\n"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:text="Offers"
+            android:textColor="#01416F"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:padding="4dp"
             android:text="Save up to 28% with GST input credit\n
 Sign in/Create a free business account"
+            android:textColor="#EB3E04"
             android:textSize="12sp" />
 
 
@@ -185,7 +208,7 @@ Sign in/Create a free business account"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#FDF701"
-            android:textColor="#EB3E04"
-            android:text="Buy It" />
+            android:text="Buy It"
+            android:textColor="#EB3E04" />
     </LinearLayout>
 </ScrollView>
