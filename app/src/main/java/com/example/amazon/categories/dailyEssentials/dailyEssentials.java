@@ -45,6 +45,7 @@ public class dailyEssentials extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(dailyEssentials.this, com.example.amazon.Cart.class);
+                intent.putExtra("disease",disease);
                 startActivity(intent);
                 finish();
             }
