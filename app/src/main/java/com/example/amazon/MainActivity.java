@@ -3,6 +3,7 @@ package com.example.amazon;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
@@ -12,10 +13,12 @@ import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.text.Html;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.MediaController;
@@ -30,7 +33,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.text.HtmlCompat;
 
-import com.example.amazon.categories.clothing.women.Dress1;
+import com.example.amazon.bot.bot;
 import com.example.amazon.categories.dailyEssentials.dailyEssentials;
 import com.example.amazon.categories.decor.decor;
 import com.example.amazon.categories.electronics.electronics;
@@ -45,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
     private SwitchCompat colorBlindSwitch;
     private static final int ISHIARA_TEST_RESULT_CODE = 1000;
     boolean resultEvaluated = false;
-    int disease=0;
+    int disease = 0;
     Menu microphone;
-    Boolean ElderMode=false;
+    Boolean ElderMode = false;
     private SwitchCompat ElderModeSwitch;
     Menu myMenu;
 
-    int RecordAudioRequestCode = 1000;
+    int RecordAudioRequestCode = 100;
     SpeechRecognizer speechRecognizer;
-
+    String mState = "anything";
 
 
     int[] clothing = {R.drawable.clothing, R.drawable.clothing_d, R.drawable.clothing_p, R.drawable.clothing_t};
@@ -63,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
     int[] decor = {R.drawable.decor, R.drawable.home_d, R.drawable.home_p, R.drawable.home_t};
 
 
-
     int[] e = {R.drawable.e, R.drawable.e_d, R.drawable.e_p, R.drawable.e_t};
     int[] h = {R.drawable.h, R.drawable.h_d, R.drawable.h_p, R.drawable.h_t};
     int[] g = {R.drawable.g, R.drawable.g_d, R.drawable.g_p, R.drawable.g_t};
@@ -71,13 +73,12 @@ public class MainActivity extends AppCompatActivity {
     int[] b = {R.drawable.b, R.drawable.b_d, R.drawable.b_p, R.drawable.b_t};
     int[] f = {R.drawable.f, R.drawable.f_d, R.drawable.f_p, R.drawable.f_t};
 
-    int[] vid1={R.raw.orig_1,R.raw.deut_1,R.raw.prot_1,R.raw.trit_1};
-    int[] vid2={R.raw.orig_2,R.raw.deut_2,R.raw.protan_2,R.raw.trit_2};
+    int[] vid1 = {R.raw.orig_1, R.raw.deut_1, R.raw.prot_1, R.raw.trit_1};
+    int[] vid2 = {R.raw.orig_2, R.raw.deut_2, R.raw.protan_2, R.raw.trit_2};
 
-    int[] item1={R.drawable.item1, R.drawable.item1_d, R.drawable.item1_p, R.drawable.item1_t};
-    int[] item4={R.drawable.item4, R.drawable.item4_d, R.drawable.item4_p, R.drawable.item4_t};
-    int[] item5={R.drawable.item5, R.drawable.item5_d, R.drawable.item5_p, R.drawable.item5_t};
-
+    int[] item1 = {R.drawable.item1, R.drawable.item1_d, R.drawable.item1_p, R.drawable.item1_t};
+    int[] item4 = {R.drawable.item4, R.drawable.item4_d, R.drawable.item4_p, R.drawable.item4_t};
+    int[] item5 = {R.drawable.item5, R.drawable.item5_d, R.drawable.item5_p, R.drawable.item5_t};
 
 
     @Override
@@ -95,17 +96,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    void elder(){
-        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    Utils.speak(tts, "Where do you want us to take you?");
-                } else {
-                    Toast.makeText(getApplicationContext(), "TTS Initialization failed!", Toast.LENGTH_SHORT).show();
-                }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    void elder() {
+        tts = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                Utils.speak(tts, "Where do you want us to take you?");
+            } else {
+                Toast.makeText(getApplicationContext(), "TTS Initialization failed!", Toast.LENGTH_SHORT).show();
             }
         }, "com.google.android.tts");
         tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
@@ -141,7 +138,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void special(){
+    public void special() {
+
 
         Utils.change((RelativeLayout) findViewById(R.id.parentLayout), disease, this);
 
@@ -164,28 +162,42 @@ public class MainActivity extends AppCompatActivity {
 
         button_click();
 
-        ElderModeSwitch= findViewById(R.id.elderSwitch);
+        ElderModeSwitch = findViewById(R.id.elderSwitch);
+        ElderModeSwitch.setChecked(getIntent().getBooleanExtra("Elder", false));
+        ElderMode = getIntent().getBooleanExtra("Elder", false);
+        if(ElderMode)      mState = "HIDE_MENU";
+        else mState="anything";
+        invalidateOptionsMenu(); // now onCreateOptionsMenu(...) is called again
         ElderModeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                Toast.makeText(MainActivity.this, "Toggled : " + isChecked, Toast.LENGTH_LONG).show();
                 if (isChecked) {
-                    ElderMode=true;
-
+                    ElderMode = true;
+                    adjustFontScale(getResources().getConfiguration(), 2);
+                    mState = "HIDE_MENU"; // setting state
+                    //onCreateOptionsMenu(); kya hua, kuch nahi kya hoga okay done? aray mujhe thodi kuch karna tha mai to bta raha tha ki mera button gayab ho gya hai, konsa button
 
                 } else {
                     ElderMode = false;
-                    setContentView(R.layout.activity_main);
-                    special();
-                    ColorDrawable colorDrawable
-                            = new ColorDrawable(getResources().getColor(R.color.colorPrimary, null));
-                    getSupportActionBar().setTitle(Html.fromHtml("<font color=#FFFFFF>Amazon</font>", HtmlCompat.FROM_HTML_MODE_LEGACY));
-                    getSupportActionBar().setBackgroundDrawable(colorDrawable);
+//                    setContentView(R.layout.activity_main);
+//                    special();
+//                    ColorDrawable colorDrawable
+//                            = new ColorDrawable(getResources().getColor(R.color.colorPrimary, null));
+//                    getSupportActionBar().setTitle(Html.fromHtml("<font color=#FFFFFF>Amazon</font>", HtmlCompat.FROM_HTML_MODE_LEGACY));
+//                    getSupportActionBar().setBackgroundDrawable(colorDrawable);
+                    adjustFontScale(getResources().getConfiguration(), 1);
+                    mState="anything";
+                    invalidateOptionsMenu(); // now onCreateOptionsMenu(...) is called again
 
 
                 }
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                intent.putExtra("Elder", ElderMode);
+                startActivity(intent);
             }
         });
-
 
 
         colorBlindSwitch = findViewById(R.id.colorBlindSwitch);
@@ -254,14 +266,26 @@ public class MainActivity extends AppCompatActivity {
 
                     ((VideoView) findViewById(R.id.video)).setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" +
                             vid1[disease]));
+
+                    adjustFontScale(getResources().getConfiguration(), 2);
+
                 }
             } else {
                 colorBlindSwitch.setChecked(false);
-//                ElderModeSwitch.setChecked(false);
+                adjustFontScale(getResources().getConfiguration(), 1);
+
+//
             }
         }
 
-        if (requestCode == RecordAudioRequestCode && resultCode == RESULT_OK && data != null) {
+        if (ElderModeSwitch.isChecked()) {
+            adjustFontScale(getResources().getConfiguration(), 2);
+        } else {
+            adjustFontScale(getResources().getConfiguration(), 1);
+
+        }
+//&& resultCode == RESULT_OK
+        if (ElderModeSwitch.isChecked() && requestCode == RecordAudioRequestCode && resultCode == RESULT_OK && data != null) {
             ArrayList<String> result = data
                     .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 //            Log.d("RESULT", result.get(0));
@@ -292,6 +316,11 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("elder", true);
                 intent.putExtra("disease", disease);
                 startActivity(intent);
+            } else if (result.get(0).toLowerCase().contains("cart") || result.get(0).toLowerCase().contains("Take me to the cart") || result.get(0).toLowerCase().contains("cart par le jao") || result.get(0).toLowerCase().contains("buy") || result.get(0).toLowerCase().contains("done shopping")) {
+                Intent intent = new Intent(MainActivity.this, Cart.class);
+                intent.putExtra("elder", true);
+                intent.putExtra("disease", disease);
+                startActivity(intent);
             }
         }
 
@@ -307,18 +336,16 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
 
 
-
         inflater.inflate(R.menu.toolbar_options, menu);
         // show the button when some condition is true
         MenuItem item = menu.findItem(R.id.menu_1);
-        if (item != null) {
-            item.setVisible(true);
-        }
+        menu.getItem(0).setVisible(!mState.equals("anything"));
 
         return true;
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -329,8 +356,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_2:
                 return true;
             case R.id.menu_3:
+                //bot
+                Bot();
                 return true;
             case R.id.menu_4:
+                cart();
                 return true;
             case android.R.id.home:
                 onBackPressed();
@@ -340,10 +370,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    void voice(){
+    private void Bot() {
+        Intent intent = new Intent(MainActivity.this, bot.class);
+        intent.putExtra("disease", disease);
+        startActivity(intent);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    void voice() {
         elder();
     }
-    void button_click(){
+
+
+    void cart() {
+        Intent intent = new Intent(MainActivity.this, Cart.class);
+        intent.putExtra("disease", disease);
+        startActivity(intent);
+    }
+
+    void button_click() {
 
         findViewById(R.id.Clothing).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -428,6 +473,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void adjustFontScale(Configuration configuration, float scale) {
+
+        configuration.fontScale = scale;
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
+        wm.getDefaultDisplay().getMetrics(metrics);
+        metrics.scaledDensity = configuration.fontScale * metrics.density;
+        getBaseContext().getResources().updateConfiguration(configuration, metrics);
+    }
 
 
 }

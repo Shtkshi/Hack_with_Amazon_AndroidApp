@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,8 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.amazon.Cart;
 import com.example.amazon.MainActivity;
 import com.example.amazon.R;
+import com.example.amazon.categories.clothing.men.Male_dress1;
 import com.example.amazon.util.Utils;
 
 import java.util.Objects;
@@ -33,6 +36,20 @@ public class Dress1 extends AppCompatActivity {
         setContentView(R.layout.activity_dress1);
         Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        Button Cart=findViewById(R.id.Cart_dress1);
+        Cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Dress1.this, com.example.amazon.Cart.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+
         Bundle extras = getIntent().getExtras();
         assert extras != null;
         disease = extras.getInt("disease");
@@ -51,15 +68,7 @@ public class Dress1 extends AppCompatActivity {
             textView2.setText("Make a cool upgrade to your casual staple with this basic t-shirt from Aeropostale. Made from breathable fabric, it's framed with a crew neck and short sleeves. Perfect to wear on a sunny day when paired with twill shorts and slip-on's.");
         }
 
-        findViewById(R.id.tryIt).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dress1.this, MainActivity.class);
-                intent.putExtra("productId", imgID[disease]);
-                intent.putExtra("disease",disease);
-                startActivity(intent);
-            }
-        });
+
             ((ImageView) findViewById(R.id.frame)).setImageResource(imgID[disease]);
     }
 

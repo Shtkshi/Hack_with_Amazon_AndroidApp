@@ -156,12 +156,12 @@ Get GST invoice and save up to 28% on business purchases. Sign up for free Here'
 
 
         <Button
-            android:id="@+id/tryIt"
+            android:id="@+id/Cart_daily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#FDF701"
             android:textColor="#EB3E04"
-            android:text="Buy It" />
+            android:text="Add to Cart" />
     </LinearLayout>
 </ScrollView>

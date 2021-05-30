@@ -4,15 +4,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.amazon.Cart;
 import com.example.amazon.R;
+import com.example.amazon.categories.clothing.men.Male_dress1;
 import com.example.amazon.util.Utils;
 
 import org.w3c.dom.Text;
@@ -33,6 +38,18 @@ public class dailyEssentials extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        Button Cart=findViewById(R.id.Cart_daily);
+        Cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(dailyEssentials.this, com.example.amazon.Cart.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         //Fonts colorblind
         Bundle extras = getIntent().getExtras();

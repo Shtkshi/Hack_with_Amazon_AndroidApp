@@ -199,20 +199,14 @@ A light, healthy and nutritious oil that is easy to digest\n
 Low in saturated fats and rich in natural vitamins\n"
             android:textSize="12sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Having doubts? Test it before you buy it"
-            android:textColor="#EB3E04"
-            android:typeface="sans" />
 
         <Button
-            android:id="@+id/tryIt"
+            android:id="@+id/Cart_groceries"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#FDF701"
             android:textColor="#EB3E04"
-            android:text="Buy It" />
+            android:text="Add to Cart" />
     </LinearLayout>
 </ScrollView>

@@ -92,19 +92,19 @@
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/colorBlindSwitch"
                 android:layout_width="wrap_content"
-                android:layout_height="19dp"
+                android:layout_height="29dp"
                 android:layout_gravity="center"
-                android:text="Color Blind Mode"
+                android:text="Color Blind"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/elderSwitch"
                 android:layout_width="match_parent"
-                android:layout_height="19dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="end"
-                android:text="Elder Mode"
+                android:text="Elder"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

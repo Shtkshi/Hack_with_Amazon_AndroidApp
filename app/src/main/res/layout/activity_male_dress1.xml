@@ -194,13 +194,13 @@ Item Dimensions LxWxH: 15.2 x 20.3 x 2.5 Centimeters\n"
 
 
         <Button
-            android:id="@+id/_men"
+            android:id="@+id/Cart_men"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FDF701"
             android:textColor="#EB3E04"
             android:layout_gravity="center_horizontal"
 
-            android:text="Try It" />
+            android:text="Add to Cart" />
     </LinearLayout>
 </ScrollView>

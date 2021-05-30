@@ -206,12 +206,12 @@ Men Charcoal Crew Neck Brand Print Heathered T-Shirt_Make a cool upgrade to your
             android:typeface="sans" />
 
         <Button
-            android:id="@+id/tryIt"
+            android:id="@+id/Cart_dress1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#FDF701"
             android:textColor="#EB3E04"
-            android:text="tryIt" />
+            android:text="Add to Cart" />
     </LinearLayout>
 </ScrollView>

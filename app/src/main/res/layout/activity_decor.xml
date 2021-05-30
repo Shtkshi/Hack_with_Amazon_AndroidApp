@@ -203,12 +203,12 @@ Sign in/Create a free business account"
 
 
         <Button
-            android:id="@+id/tryIt"
+            android:id="@+id/Cart_decor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#FDF701"
-            android:text="Buy It"
+            android:text="Add to Cart"
             android:textColor="#EB3E04" />
     </LinearLayout>
 </ScrollView>

@@ -2,6 +2,8 @@ package com.example.amazon;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.example.amazon.categories.clothing.men.Male_dress1;
@@ -9,12 +11,14 @@ import com.example.amazon.categories.clothing.women.Dress1;
 import com.example.amazon.util.AllCategoriesAdapter;
 import com.example.amazon.util.Utils;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AllCategories extends AppCompatActivity {
 
@@ -29,6 +33,8 @@ public class AllCategories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_all_categories2);
+        Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         Bundle extras = getIntent().getExtras();
@@ -77,5 +83,27 @@ public class AllCategories extends AppCompatActivity {
         classes.add(Male_dress1.class);
 
 
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_options, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.menu_settings:
+                return true;
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

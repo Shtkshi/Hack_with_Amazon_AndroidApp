@@ -1,9 +1,16 @@
 package com.example.amazon.categories.decor;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,7 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.amazon.Cart;
 import com.example.amazon.R;
+import com.example.amazon.categories.clothing.men.Male_dress1;
 import com.example.amazon.util.Utils;
 
 import java.util.Objects;
@@ -24,6 +33,7 @@ public class decor extends AppCompatActivity {
     int[] imgID = {R.drawable.decor_item1, R.drawable.fruits_d, R.drawable.fruits_p, R.drawable.fruits_t};
     Boolean elders=false;
 
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,17 @@ public class decor extends AppCompatActivity {
         setContentView(R.layout.activity_decor);
         Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Button Cart=findViewById(R.id.Cart_decor);
+        Cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(decor.this, com.example.amazon.Cart.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
         //Fonts colorblind
         Bundle extras = getIntent().getExtras();
@@ -51,9 +72,9 @@ public class decor extends AppCompatActivity {
                     "Item ShapeOctagonal\n" +
                     "Item Dimensions LxWxH10 x 10 x 10");
 
-            textView1.setTextSize(30);
-            textView2.setTextSize(30);
+
         }
+
 
 
 
