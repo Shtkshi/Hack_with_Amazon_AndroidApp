@@ -44,6 +44,7 @@ public class electronics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(electronics.this, com.example.amazon.Cart.class);
+                intent.putExtra("disease",disease);
                 startActivity(intent);
                 finish();
             }
