@@ -47,6 +47,7 @@ public class decor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(decor.this, com.example.amazon.Cart.class);
+                intent.putExtra("disease",disease);
                 startActivity(intent);
                 finish();
             }
