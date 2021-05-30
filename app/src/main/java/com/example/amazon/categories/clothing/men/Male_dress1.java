@@ -41,6 +41,7 @@ public class Male_dress1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(Male_dress1.this, Cart.class);
+                intent.putExtra("disease",disease);
                 startActivity(intent);
                 finish();
             }
