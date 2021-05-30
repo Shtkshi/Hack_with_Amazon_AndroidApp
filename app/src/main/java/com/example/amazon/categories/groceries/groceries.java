@@ -40,6 +40,7 @@ public class groceries extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(groceries.this, com.example.amazon.Cart.class);
+                intent.putExtra("disease",disease);
                 startActivity(intent);
                 finish();
             }
